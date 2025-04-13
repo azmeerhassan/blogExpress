@@ -6,7 +6,9 @@ const port = 3000
 
 var exphbs = require('express-handlebars')
 
-app.engine('handlebars', exphbs());
+const hbs = exphbs.create({});
+
+app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 
